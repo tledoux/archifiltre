@@ -2,8 +2,6 @@ import { Map, List, Set } from "immutable";
 
 import { generateRandomString } from "util/random-gen-util";
 
-import colors from "colors/safe";
-
 const randNat = a => Math.round(Math.random() * a);
 
 const strange = 0.1;

@@ -1,14 +1,15 @@
 import * as ObjectUtil from "util/object-util";
 import * as FsUtil from "util/file-sys-util";
+const Fs = window.require("fs");
 
-const Fs = require("fs");
+const electron = window.require("electron");
 const Path = require("path");
 
 const Crypto = require("crypto");
 
-const App = require("electron").remote.app;
+const App = electron.remote.app;
 
-const random_string  = "WbXDHMMHojJEQHzY6TLFBq2LSOQjVktGRSp9HT07";
+const random_string = "WbXDHMMHojJEQHzY6TLFBq2LSOQjVktGRSp9HT07";
 const base_path = Path.join(App.getPath("userData"), random_string);
 
 export const create = initial_obj => {

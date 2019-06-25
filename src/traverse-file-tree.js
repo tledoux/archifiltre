@@ -1,5 +1,5 @@
-const Fs = require("fs");
-const Path = require("path");
+const Fs = window.require("fs");
+const Path = window.require("path");
 
 const recTraverseFileTree = (hook, path) => {
   try {

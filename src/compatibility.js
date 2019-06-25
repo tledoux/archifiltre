@@ -1,14 +1,4 @@
 /* eslint-disable no-fallthrough */
-import * as Loop from "test/loop";
-
-import { generateRandomString } from "util/random-gen-util";
-
-// TO REMOVE TO REMOVE TO REMOVE TO REMOVE
-// import * as V5 from '../version/v5/src/file-system'
-// import * as V6 from '../version/v6/src/file-system'
-// import * as V7 from '../version/v7/src/file-system'
-// import * as V8 from '../version/v8/src/file-system'
-// TO REMOVE TO REMOVE TO REMOVE TO REMOVE
 
 export const fromAnyJsonToJs = json => {
   const version = JSON.parse(json).version;
@@ -16,28 +6,6 @@ export const fromAnyJsonToJs = json => {
   let js;
 
   switch (version) {
-    // TO REMOVE TO REMOVE TO REMOVE TO REMOVE
-    // case 5:
-    //   if (js===undefined) {
-    //     js = V5.toJs(V5.fromJson(json))
-    //   }
-    //   js = v5JsToV6Js(js)
-    // case 6:
-    //   if (js===undefined) {
-    //     js = V6.toJs(V6.fromJson(json))
-    //   }
-    //   js = v6JsToV7Js(js)
-    // case 7:
-    //   if (js===undefined) {
-    //     js = V7.toJs(V7.fromJson(json))
-    //   }
-    //   js = v7JsToV8Js(js)
-    // case 8:
-    //   if (js===undefined) {
-    //     js = V8.toJs(V8.fromJson(json))
-    //   }
-    //   js = v8JsToV9Js(js)
-    // TO REMOVE TO REMOVE TO REMOVE TO REMOVE
     case 9:
       if (js === undefined) {
         js = JSON.parse(json);

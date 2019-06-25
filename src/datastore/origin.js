@@ -1,5 +1,4 @@
 import * as Arbitrary from "test/arbitrary";
-import * as Loop from "test/loop";
 
 const arbitraryMockFile = () => {
   return {

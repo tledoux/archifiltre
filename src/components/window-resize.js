@@ -2,7 +2,7 @@ import React from "react";
 
 import * as UserData from "user-data";
 
-const { remote } = require("electron");
+const { remote } = window.require("electron");
 
 class WindowResize extends React.PureComponent {
   constructor(props) {
@@ -79,7 +79,6 @@ export default class WindowResizeErrorHandler extends React.Component {
   }
 
   render() {
-    const props = this.props;
     const state = this.state;
 
     if (state.hasError) {

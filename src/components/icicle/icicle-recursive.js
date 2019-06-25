@@ -4,10 +4,6 @@ import * as ArrayUtil from "util/array-util";
 import IcicleRect from "./icicle-rect";
 
 export default class IcicleRecursive extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   makeKey(id) {
     return "icicle-recursive-" + id;
   }

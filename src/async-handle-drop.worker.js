@@ -4,7 +4,7 @@ import * as VirtualFileSystem from "datastore/virtual-file-system";
 import { fromAnyJsonToJs } from "compatibility";
 
 import version from "version";
-import { reportError, reportMessage } from './reporter';
+import { reportError, reportMessage } from "./reporter";
 
 /**
  * Loads a preexisting saved config
@@ -56,7 +56,7 @@ function loadFolder(folderPath) {
     [path, origin] = traverseFileTree(traverseHook, folderPath);
   } catch (err) {
     reportError(err);
-    reportMessage('Error in traverseFileTree');
+    reportMessage("Error in traverseFileTree");
     postMessage({ status: "error", message: err.message });
     return;
   }
@@ -68,7 +68,7 @@ function loadFolder(folderPath) {
     vfs = VirtualFileSystem.make(origin, folderPath);
   } catch (err) {
     reportError(err);
-    reportMessage('Error in vfs.make');
+    reportMessage("Error in vfs.make");
     postMessage({ status: "error", message: err.message });
     return;
   }
@@ -77,7 +77,7 @@ function loadFolder(folderPath) {
     vfs = VirtualFileSystem.derivate(vfs);
   } catch (err) {
     reportError(err);
-    reportMessage('Error in vfs.derivate');
+    reportMessage("Error in vfs.derivate");
     postMessage({ status: "error", message: err.message });
   }
 
@@ -86,8 +86,7 @@ function loadFolder(folderPath) {
     vfs: VirtualFileSystem.toJs(vfs)
   });
 }
-
-onmessage = function(e) {
+self.addEventListener("message", e => {
   const data = e.data;
   const dropped_folder_path = data.dropped_folder_path;
 
@@ -96,4 +95,4 @@ onmessage = function(e) {
   } else {
     loadFolder(dropped_folder_path);
   }
-};
+});

@@ -4,7 +4,6 @@ import "./css/index.scss";
 import React from "react";
 
 import ReactDOM from "react-dom";
-import Analytics from "electron-ga";
 
 import ErrorBoundary from "components/error-boundary";
 import MainSpace from "components/main-space";
@@ -20,19 +19,20 @@ import { Store } from "reducers/store";
 import version from "version";
 import pick from "languages";
 
+// const Analytics = window.require("electron-ga");
+
 document.title = pick({
   en: "icicle v" + version + " - archifiltre",
   fr: "stalactite v" + version + " - archifiltre"
 });
 
-if (MODE === "production") {
-  const analytics = new Analytics("UA-115293619-2");
-
-  analytics.send("pageview", {
-    dh: "https://archifiltre.electron/",
-    dp: "/electron/v9",
-    dt: "archifiltre"
-  });
+if (process.env.NODE_ENV === "production") {
+  // const analytics = new Analytics("UA-115293619-2");
+  // analytics.send("pageview", {
+  //   dh: "https://archifiltre.electron/",
+  //   dp: "/electron/v9",
+  //   dt: "archifiltre"
+  // });
 }
 
 /**This is the entrypoint for the app. */

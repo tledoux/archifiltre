@@ -1,10 +1,10 @@
 import { generateRandomString } from "util/random-gen-util";
 import { Map } from "immutable";
+const fs = window.require("fs");
 
 const XML = require("xml");
 const dateFormat = require("dateformat");
 const Path = require("path");
-const fs = require("fs");
 const JSZip = require("jszip");
 const SHA512 = require("js-sha512").sha512;
 

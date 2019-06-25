@@ -90,7 +90,7 @@ class ReportCellTags extends React.Component {
     const escape_key_code = 27;
 
     if (keyCode === backspace_key_code) {
-      if (value.length == 0 && tag_ids.size > 0) {
+      if (value.length === 0 && tag_ids.size > 0) {
         deleteTagged(node_id, tag_ids.last());
       }
     } else if (keyCode === enter_key_code) {

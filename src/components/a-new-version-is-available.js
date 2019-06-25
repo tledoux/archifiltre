@@ -9,7 +9,7 @@ import * as Color from "util/color-util";
 
 import pick from "languages";
 
-const { shell } = require("electron");
+const { shell } = window.require("electron");
 
 const text = v =>
   pick({

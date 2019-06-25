@@ -1,13 +1,12 @@
 /* eslint-disable no-undef */
 import chai from "chai";
 import chaiExclude from "chai-exclude";
+import { is } from "immutable";
+import colors from "colors/safe";
+
 chai.use(chaiExclude);
 
 const expect = chai.expect;
-
-import { is } from "immutable";
-
-import colors from "colors/safe";
 
 let loop_log_array = [];
 

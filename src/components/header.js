@@ -7,7 +7,7 @@ import Dashboard from "components/dashboard";
 
 import pick from "languages";
 
-const { shell } = require("electron");
+const { shell } = window.require("electron");
 
 const title = pick({
   en: "Icicles",

@@ -2,7 +2,7 @@
 
 ## Contributing
 
-### Launching the app
+### Launching the index
 
 First install the dependencies
 
@@ -33,15 +33,15 @@ If you want to contribute, you must respect our linter specs. You can run `yarn 
 You are welcome to open pull requests to add features to the project.
 
 
-### Building/releasing the app.
+### Building/releasing the index.
 
-First, build the app in production mode
+First, build the index in production mode
 
 ```bash
 yarn buildProd
 ```
 
-Then you can package the app for the right platform :
+Then you can package the index for the right platform :
 
 ```bash
 yarn windows

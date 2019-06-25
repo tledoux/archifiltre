@@ -1,11 +1,12 @@
-const Fs = require("fs");
-const Path = require("path");
-
-const TarFs = require("tar-fs");
-const Zlib = require("zlib");
-const TarStream = require("tar-stream");
+import Path from "path";
 import FileSaver from "file-saver";
 
+import TarFs from "tar-fs";
+import Zlib from "zlib";
+import TarStream from "tar-stream";
+import JSZip from "jszip";
+
+const Fs = window.require("fs");
 export function save(name, json) {
   const blob = new Blob([json], { type: "text/plain;charset=utf-8" });
   FileSaver.saveAs(blob, name);
@@ -280,8 +281,6 @@ export const recTraverseFileTreeForHook = (hook, path) => {
     return;
   }
 };
-
-import JSZip from "jszip";
 
 const recZipFileTree = (hook, path, zip) => {
   const stats = Fs.statSync(path);
