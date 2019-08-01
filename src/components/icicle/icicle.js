@@ -3,7 +3,7 @@ import { updateIn } from "immutable";
 import IcicleRect from "./icicle-rect";
 import * as FunctionUtil from "../../util/function-util";
 import IcicleRecursive from "./icicle-recursive";
-import IcicleTags from "./icicle-tags";
+import IcicleUpperBorder from "./icicle-upper-border";
 
 export default class Icicle extends PureComponent {
   constructor(props) {
@@ -154,6 +154,8 @@ export default class Icicle extends PureComponent {
     const dims = this.state.dims;
     const tag_id_to_highlight = icicle_state.tagIdToHighlight();
 
+    const commented_ff_id_array = database.getCommentedFfidArray();
+
     return (
       <g>
         <g style={style}>
@@ -177,7 +179,7 @@ export default class Icicle extends PureComponent {
         </g>
         {hover_components}
         {sequence_components}
-        <IcicleTags
+        <IcicleUpperBorder
           tag_ids={tag_ids}
           getTagByTagId={getTagByTagId}
           dims={dims}
@@ -185,6 +187,7 @@ export default class Icicle extends PureComponent {
           onClick={onClickHandler}
           onDoubleClick={onDoubleClickHandler}
           onMouseOver={onMouseOverHandler}
+          commented_ff_id_array={commented_ff_id_array}
         />
       </g>
     );

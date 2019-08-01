@@ -90,6 +90,25 @@ const getTagByTagId = id => state => getIn(state, ["tags", id]);
 
 const getWaitingCounter = () => state => 0;
 
+const getCommentedFfidArray = (() => {
+  let prev_state = null;
+  let prev_ans = null;
+
+  return () => state => {
+    if (state !== prev_state) {
+      prev_state = state;
+      prev_ans = Array.from(
+        state
+          .get("files_and_folders")
+          .filter(a => a.get("comments") !== "")
+          .keys()
+      );
+    }
+
+    return prev_ans;
+  };
+})();
+
 const reader = {
   overallCount,
   fileCount,
@@ -106,7 +125,8 @@ const reader = {
   getTagIdsByFfId,
   getAllTagIds,
   getTagByTagId,
-  getWaitingCounter
+  getWaitingCounter,
+  getCommentedFfidArray
 };
 
 const set = next_state => state => next_state;

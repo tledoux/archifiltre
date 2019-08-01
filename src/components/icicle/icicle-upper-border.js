@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class IcicleTags extends React.PureComponent {
+export default class IcicleUpperBorder extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -55,6 +55,7 @@ export default class IcicleTags extends React.PureComponent {
     const getTagByTagId = props.getTagByTagId;
     const dims = props.dims;
     const tag_id_to_highlight = props.tag_id_to_highlight;
+    const commented_ff_id_array = props.commented_ff_id_array;
 
     const onClickFactory = this.onClickFactory;
     const onDoubleClickFactory = this.onDoubleClickFactory;
@@ -75,6 +76,11 @@ export default class IcicleTags extends React.PureComponent {
           components[ff_id] = highlight;
         }
       });
+    });
+
+    commented_ff_id_array.forEach(ff_id => {
+      const highlight = false;
+      components[ff_id] = highlight;
     });
 
     for (let key in components) {
